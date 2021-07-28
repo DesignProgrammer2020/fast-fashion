@@ -2,7 +2,7 @@ let badYes = false; //for mouse pressed
 
 let sparkle = []; //sparkle class
 
-var song;
+// var song;
 
 function preload() {
   //clipped part of Rihanna's Diamond song; only to be played if badYes is false
