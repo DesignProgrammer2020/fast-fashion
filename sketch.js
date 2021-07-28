@@ -2,7 +2,7 @@ let badYes = false; //for mouse pressed
 
 let sparkle = []; //sparkle class
 
-// var song;
+var song;
 
 function preload() {
   //clipped part of Rihanna's Diamond song; only to be played if badYes is false
@@ -28,14 +28,7 @@ function draw() {
     for (i = 0; i < sparkle.length; i++) {
       sparkle[i].display();
     }
-    
-    //play diamonds song
-    if (song.isPlaying()) {
-      song.stop();
-      song.setVolume(1);
-    } else {
-      song.play();
-    }
+    song.play();
   }
 
   if (badYes) {
