@@ -139,10 +139,10 @@ function drawSweatshop() {
   fill(80, 0, 0, 60);
   rect(0, 0, width, height);
 
-  factory
-  beginShape(); //begin from left corner of chimney
-  vertex();
-  endShape();
+  // factory
+  // beginShape(); //begin from left corner of chimney
+  // vertex();
+  // endShape();
 }
 
 function drawBWDress() {
