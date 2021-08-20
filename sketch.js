@@ -3,10 +3,14 @@ let badYes = false; //for mouse pressed
 let sparkle = []; //sparkle class
 
 var song;
+var noise;
 
 function preload() {
   //clipped part of Rihanna's Diamond song; only to be played if badYes is false
   song = loadSound("diamonds.mp3");
+
+  //factory sounds for badYes
+  noise = loadSound("factorysounds.mp3");
 }
 
 function setup() {
@@ -20,6 +24,7 @@ function setup() {
 }
 
 function draw() {
+  
   if (!badYes) {
     //dark purple background
     background(60, 15, 80);
@@ -29,10 +34,10 @@ function draw() {
       sparkle[i].display();
     }
 
+    noise.stop();
+
     //play Rihanna's Diamonds
-    // song.play();
     if (song.isPlaying()){
-      // song.stop();
       song.setVolume(1);
       }
     else {
@@ -46,7 +51,16 @@ function draw() {
     drawSweatshop();
     drawNoFashion(); //text saying "No Fast Fashion"
     song.stop();
+
+    //play factory sounds
+    if (noise.isPlaying()){
+      noise.setVolume(1);
+      }
+    else {
+      noise.play();
+    }
   }
+
 }
 
 //change scene from fashion sale to sweatshop
