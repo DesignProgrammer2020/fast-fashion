@@ -15,6 +15,24 @@ class Sparkle {
     circle(this.x, this.y, this.r);
     pop();
 
+    push();
+    //double colored circles
+    translate(width*0.1, height*0.2)
+    stroke(random(120, 255), random(120, 255), random(120, 255)); //lighter-colored stroke for outer circle
+    strokeWeight(3);
+    fill(random(80, 220), random(80, 220), random(80, 220)); //darker-colored fill for inner circle
+    circle(this.x, this.y, this.r);
+    pop();
+
+    push();
+    //colored circles with grayscale stroke
+    translate(-width*0.15, -height*0.25);
+    stroke(random(100, 255)); //gray to white stroke for outer circle
+    strokeWeight(3);
+    fill(random(80, 220), random(80, 220), random(80, 220)); //colorful fill for inner circle
+    circle(this.x, this.y, this.r);
+    pop();
+
     //light colored squares
     push();
     rectMode(CENTER);
@@ -56,14 +74,13 @@ class Sparkle {
     //light colored diamonds
     push();
     rectMode(CENTER);
-    // rotate(45);
     translate(width*0.1, -height*0.2)
     rotate(45);
     fill(random(120, 255), random(120, 255), random(120, 255));
     square(this.x, this.y, this.s);
     pop();
 
-    //silver squares
+    //silver diamonds
     push();
     rectMode(CENTER);
     translate(width*0.2, height*0.3);

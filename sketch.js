@@ -24,7 +24,7 @@ function setup() {
 }
 
 function draw() {
-  
+
   if (!badYes) {
     //dark purple background
     background(60, 15, 80);
@@ -136,13 +136,13 @@ function drawBuyMe() {
 function drawSweatshop() {
   //(another) transparent dark red background to cover BW dress
   noStroke();
-  fill(160, 0, 0, 60);
+  fill(80, 0, 0, 60);
   rect(0, 0, width, height);
 
-  //factory
-  //beginShape();
-  // vertex();
-  // endShape();
+  factory
+  beginShape(); //begin from left corner of chimney
+  vertex();
+  endShape();
 }
 
 function drawBWDress() {
