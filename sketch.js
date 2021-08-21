@@ -1,6 +1,7 @@
 let badYes = false; //for mouse pressed
 
 let sparkle = []; //sparkle class
+let smoke = []; //smoke class
 
 var song;
 var noise;
@@ -17,9 +18,17 @@ function setup() {
   createCanvas(480, 960);
 
   frameRate(2);
+
+  //add shining lights to background
   for (let i = 0; i <= 70; i++) {
     sparkle[i] = new Sparkle(random(0, width), random(0, height));
     console.log(sparkle[i]);
+  }
+
+  //make the smoke float
+  for (let j = 0; j <= 20; j++) {
+    smoke[j] = new Smoke(random(width), random(0, height*0.75), random(1, 2));
+    console.log(smoke[j]);
   }
 }
 
@@ -50,6 +59,13 @@ function draw() {
     drawBWDress();
     drawSweatshop();
     drawNoFashion(); //text saying "No Fast Fashion"
+
+    //smoke
+    for (j = 0; j < smoke.length; j++) {
+      smoke[j].display();
+      smoke[j].move();
+    }
+
     song.stop();
 
     //play factory sounds
