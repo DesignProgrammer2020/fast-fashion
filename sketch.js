@@ -58,7 +58,7 @@ function draw() {
     background(40, 0, 0); //bloody red background
     drawBWDress();
     drawSweatshop();
-    drawNoFashion(); //text saying "No Fast Fashion"
+    drawWords(); //text saying "No Fast Fashion"
 
     //smoke
     for (j = 0; j < smoke.length; j++) {
@@ -150,15 +150,30 @@ function drawBuyMe() {
 }
 
 function drawSweatshop() {
+  push();
   //(another) transparent dark red background to cover BW dress
-  noStroke();
+  rectMode(CENTER);
   fill(80, 0, 0, 60);
-  rect(0, 0, width, height);
+  rect(width*0.5, height*0.5, width, height);
+  pop();
 
+  push();
   // factory
-  // beginShape(); //begin from left corner of chimney
-  // vertex();
-  // endShape();
+  noStroke();
+  fill(0, 180);
+
+  //chimney
+  beginShape();
+  vertex(width*0.25, height*0.67);
+  vertex(width*0.291, height*0.55);
+  vertex(width*0.375, height*0.55);
+  vertex(width*0.41, height*0.67);
+  endShape(CLOSE);
+
+  //building
+  rectMode(CENTER);
+  rect(width*0.5, height*0.75, 400, 155);
+  pop();
 }
 
 function drawBWDress() {
@@ -213,13 +228,22 @@ function drawBWSkirt() {
   endShape();
 }
 
-function drawNoFashion() {
+function drawWords() {
   push();
   textAlign(CENTER);
   noStroke();
-  fill(200); //bold off-white text
-  textSize(30);
+  fill(180); //bold off-white text
   textFont("Arial");
+
+  textSize(30);
   text("DON'T CHASE Fast Fashion!", width * 0.5, height * 0.075);
+
+  textSize(18);
+  text("CARBON EMISSIONS", width * 0.5, height * 0.5);
+
+  textSize(24);
+  textStyle(BOLD);
+  fill(255, 0, 0); //make bold red to get attention
+  text("SWEATSHOPS", width * 0.5, height * 0.75);
   pop();
 }
