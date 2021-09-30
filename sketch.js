@@ -163,15 +163,12 @@ function drawSweatshop() {
   fill(0, 180);
 
   //chimney
-  push();
   beginShape();
   vertex(width*0.25, height*0.67);
   vertex(width*0.291, height*0.55);
   vertex(width*0.375, height*0.55);
   vertex(width*0.41, height*0.67);
   endShape(CLOSE);
-  scale(random(1, 1.5));
-  pop();
 
   //building
   rectMode(CENTER);
